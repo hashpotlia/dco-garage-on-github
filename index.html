@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to DCO Garage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel='stylesheet' type='text/css' href='main.css'>
+	<!-- Add Highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+	<button id="darkModeToggle">🌙</button>
+
+    <header class="top-menu">
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">Wiki Resources</a>
+		<a href="#">DCOSE Resource</a>
+		<input type="text" id="universalSearch" placeholder="🔍 Search..." onkeyup="universalFilter()">	
+    </header>
+    
+    <div class="sidebar">
+		<div id="sidebarLogo">DCO GARAGE</div>
+        <a href="#" class="active">DCO Home</a>
+        <a href="#">Sev Monitor</a>
+        <a href="#">DCO Toolkit</a>
+		<a href="#">Bookmark Manager</a>
+		<a href="#" id="updatesLink">Updates</a>
+		<a href="https://dcodb.integ.amazon.com/dashboards2/akl/" target="_blank">DCO Dashboard</a>
+		<div id="quickActions">
+</div>
+
+    </div>
+
+    <div class="content">
+		<!-- Dashboard Section -->
+		
+		<div id="dashboard-content" class="glass-panel">
+			<h1>DCO (Tools) Commom Bookmarks</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>Description</th>
+						<th>Link</th>
+					</tr>
+				</thead>
+					<tbody id="bookmarks-list">
+						<!-- Rows will be dynamically populated -->
+					</tbody>
+			</table>
+		</div>
+	
+		<!-- Wiki Resources Section (Initially Hidden) -->
+		<div id="wiki-resources-section" style="display: none;" class="glass-panel">
+			<h1>Wiki Resources</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Link</th>
+					</tr>
+				</thead>
+				   <tbody>
+						<tr>
+							<td>Wiping/Rebuild - Celestica 8000, 8060, 8200</td>
+							<td><a href="https://w.amazon.com/bin/view/Users/penhaig/ID_WEB-SSH/Wipe_Celestica/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Wiping/Rebuild - ACCTON</td>
+							<td><a href="https://w.amazon.com/bin/view/Users/penhaig/ID_WEB-SSH/Wipe_Accton/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Wiping/Rebuild - Networking Devices</td>
+							<td><a href="https://w.amazon.com/bin/view/Users/jhnowen/Networking/Device_wipe/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Wiping/Rebuild - Accton & Celestica</td>
+							<td><a href="https://w.amazon.com/bin/view/The_Compendium_of_Briseis/ID_Knowledge_Vault/ACCTON_CELESTICA_Wipe" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Powershelf LED states (Official wiki for WMW Power)</td>
+							<td><a href="https://w.amazon.com/bin/view/Who_Made_Who_Power_Architecture/OpsRunbook#HPSCLEDDecoder" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>DCO Ticket Handling Standards</td>
+							<td><a href="https://w.amazon.com/bin/view/Templates/G_China_Infra_Ops/BJSPEK/DCO/Break-fix/Ticket_Handling_Standards" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>DCO TicketEtiquette</td>
+							<td><a href="https://w.amazon.com/bin/view/DCO-Ticket-Etiquette" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Management, Out-of-band Networks, and Automation</td>
+							<td><a href="https://w.amazon.com/bin/view/Networking/DCNE/MONA" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Boost Electron to Receive and Install Racks</td>
+							<td><a href="https://w.amazon.com/bin/view/AWS_InfraOps_Global_Process_Owners/Rack_Install/Using_Boost_To_Receive_Racks/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Patching Guide</td>
+							<td><a href="https://w.amazon.com/bin/view/Users/galate/Quip/PatchingGuide/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Patching Diagrams</td>
+							<td><a href="https://w.amazon.com/index.php/Mihaleff/Patching_Diagrams" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Hostclass Slayer (HCS)</td>
+							<td><a href="https://w.amazon.com/bin/view/Core/ESIDev/HostClassSlayer" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Decommission Old TOR Hostname</td>
+							<td><a href="https://w.amazon.com/bin/view/DecommissionOldTORhostname/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>DCODiag Wiki</td>
+							<td><a href="https://w.amazon.com/index.php/DCOSE/Projects/dcodiag" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Pilsner</td>
+							<td><a href="https://w.amazon.com/bin/view/DCO-TNT/Projects/Tavern/Pilsner/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Admiral</td>
+							<td><a href="https://w.amazon.com/index.php/EC2/Admiral" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>AWS Region Build</td>
+							<td><a href="https://w.amazon.com/index.php/AWSRegionBuilds" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>HardwareVetting</td>
+							<td><a href="https://w.amazon.com/index.php/HWEng/ServerQualityTeam/HardwareVetting" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>MAP - DCOSE</td>
+							<td><a href="https://w.amazon.com/index.php/Public/DCO/DCOpile/map" target="_blank">w.amazon.com</a></td>
+						</tr>				
+						<tr>
+							<td>NEW SITE LAUNCH GUIDANCE FOR DCO</td>
+							<td><a href="https://w.amazon.com/bin/view/GRU/DCO-New-Site-Launch/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>AEA setup on iPhone and Android</td>
+							<td><a href="https://w.amazon.com/bin/view/AEA-Mobile/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Humboldt16 Devices Information</td>
+							<td><a href="https://w.amazon.com/bin/view/AWS-KMS/Internal/Projects/Humboldt-FIPS-140-3/dco_instructions/h16_all_devices_in_rack_inspection/#HOptionAforSideTamperSealforSmall2C5-deviceRacks28Draft21212129" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Boost Platform - Engagement</td>
+							<td><a href="https://w.amazon.com/bin/view/AWSDirectedWork/BoostPlatform/Engagement/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Boost Platform Wiki</td>
+							<td><a href="https://w.amazon.com/bin/view/AWSDirectedWork/BoostPlatform/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>EC2 Bare Metal Internals for Carbon</td>
+							<td><a href="https://w.amazon.com/bin/view/EC2/Nucleus/Carbon/bare-metal/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Risk Assessment Tool</td>
+							<td><a href="https://w.amazon.com/bin/view/AWSHealthandSafety/TechandTools/RiskAssessment" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Rack Correction Scan In Boost</td>
+							<td><a href="https://w.amazon.com/bin/view/IAD_ID_INSTALL/Rack_Handoff/Rack_Correction_Scan/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>WMW Rack ATSPSU & BBU LED Decoder</td>
+							<td><a href="https://w.amazon.com/bin/view/DCEO/ICN/WMW/LED_Status_checker/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>7S</td>
+							<td><a href="https://w.amazon.com/bin/view/AWS/DCC/AMER/PHX/7S/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>Amazon Client Imaging Solution (ACIS)</td>
+							<td><a href="https://w.amazon.com/bin/view/ClientEng/ACIS/GettingStarted/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td>AKL Server Lifter - Stacker E200T</td>
+							<td><a href="https://w.amazon.com/bin/view/AKL_InfraOps/DCO/Equipmentandtools/Serverlift/" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<!--<tr>
+							<td></td>
+							<td><a href="" target="_blank">w.amazon.com</a></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><a href="" target="_blank">w.amazon.com</a></td>
+						</tr>-->
+						
+					</tbody>
+			</table>
+		</div>
+		
+		<!-- New DCOSE Resource Section with Bookmark Management -->
+				<div id="dcose-resource-section" style="display: none;" class="glass-panel">
+					<h1>DCOSE Resource</h1>
+					<div id="dcose-table-container">
+						<table>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Description</th>
+									<th>Link</th>
+								</tr>
+							</thead>
+							<tbody id="dcose-list">
+								<!-- Rows will be dynamically populated -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+		
+		<!-- Sev Monitor Section (Initially Hidden) -->
+		<div id="sev-monitor-section" style="display: none;" class="glass-panel">
+			<p align="center" style="color:orange;">Content for Sev Monitor goes here.</p>
+			<p align="center" style="color:orange;">Includes real-time Slack message updates! [Coming Soon] 📢</p>
+		</div>
+		
+		<!-- DCO Toolkit Section (Initially Hidden) -->
+		<div id="dco-toolkit-section" style="display: none;" class="glass-panel">
+			
+			<div class="bookmark-manager">
+				<h1 class="title" align="center">DCO Toolkit; (commands)</h2>
+				<hr>
+					<p align="center">A centralized hub that offers effortless access to the DCO Toolkit, bringing all commands together in one convenient, searchable, and user-friendly location!</p>
+			</div>
+			<br>
+			<div class="toolkit-controls">
+				<div class="filter-control">
+					<label for="categoryFilter">Filter by Category:</label>
+					<select id="categoryFilter" onchange="filterAndSortToolkit()">
+						<option value="all">All Categories</option>
+						<!-- Categories will be dynamically populated -->
+					</select>
+				</div>
+				<div class="sort-control">
+					<label for="sortOption">Sort by:</label>
+					<select id="sortOption" onchange="filterAndSortToolkit()">
+						<option value="category-asc">Category (A-Z)</option>
+						<option value="category-desc">Category (Z-A)</option>
+						<option value="details-asc">Details (A-Z)</option>
+						<option value="details-desc">Details (Z-A)</option>
+					</select>
+				</div>
+			</div>
+			<div id="toolkit-list"></div> <!-- Entries will be dynamically populated -->
+		</div>
+		
+		<!-- Bookmark Manager Section (Initially Hidden) -->
+		<div id="bookmark-manager-section" style="display: none;" class="glass-panel">
+			<div class="bookmark-manager">
+				<h2 class="title" align="center">Bookmark Manager</h2>
+				<hr>
+				<p class="description" align="center">
+					The <strong>Bookmark Manager</strong> is your go-to space for contributing to DCO! Easily add and manage bookmarks for 
+					<strong>DCO (Tools) - Bookmark Manager</strong> and <strong>DCOSE Resource - Bookmark Manager</strong>, with more resources coming soon.
+				</p>
+				<p class="admin-access" align="center">
+					<em>Admins also get access to the <strong>Bookmark Manager Dashboard</strong> for streamlined oversight and management.</em>
+				</p>
+			</div>
+			<h3>DCO (Tools) - Bookmark Manager</h3>
+			   <button class="add-button" onclick="openBookmarkModal()">+ Add Bookmark</button>
+			   <br>
+			<h3>DCOSE Resource - Bookmark Manager</h3>
+				<button class="add-button" onclick="openBookmarkModal('dcose')">+ Add Bookmark</button>
+				<br>
+				<br>
+				<br>
+			<h3>Bookmark Manager Dashboard</h3>
+				<button class="add-button" onclick="openPasswordModal()">Go to Dashboard</button>
+		</div>
+		
+						<!-- Bookmark Modal -->
+				<div id="bookmark-modal" class="modal">
+					<div class="modal-content">
+						<h2>Add a Bookmark</h2>
+						<input type="text" id="modal-name" placeholder="Enter description" required />
+						<input type="url" id="modal-link" placeholder="Enter link (e.g., https://example.com)" required />
+						<input type="text" id="modal-alt" placeholder="Enter alt text (optional)" />
+						<div class="modal-buttons">
+							<button class="save-button" onclick="saveBookmark()">Save</button>
+							<button class="cancel-button" onclick="closeBookmarkModal()">Cancel</button>
+						</div>
+					</div>
+				</div>
+		
+		<!-- Updates Section (Initially Hidden) -->
+        <div id="updates-section" style="display: none;" class="glass-panel">
+            
+			<div class="bookmark-manager">
+				<h1 class="title" align="center">DCO Garage - Updates & Announcements</h2>
+					<p align="center" style="color:orange;">
+						Current Version: <span id="current-version">[v1.8]</span> <b>|</b> 
+						<b style="color:red;"><span id="maintenance-tag">[Sys_Maintenance]</span></b>
+					</p>
+			</div>
+
+            <div class="announcement">
+                <h1 align="center">🚀 ANNOUNCEMENT: DCO Garage is Now Live! 🚀</h1>
+                <p>We’re thrilled to introduce <strong>DCO Garage</strong> – a unified hub that provides seamless access to <strong>DCO Tools, Wiki Resources, SEV Monitor, and Toolkit (commands),</strong> all in one convenient location! 🚀</p>
+                <h2>📋 How to Access?</h2>
+                <p>Click the link below to start exploring:</p>
+                <p><a href="https://drive-render.corp.amazon.com/view/hpotlia@/AKLScripts/dco_garage.html"><strong>DCO Garage</strong></a></p>
+            </div>
+			<br>
+			<h2 style="color:orange;">DCO Garage Update History / Release Notes:</h2>
+            <div id="updates-list"></div> <!-- Updates will be dynamically populated -->
+            <div class="announcement">
+                <h2 class="feedback">📬 Share Your Feedback!</h2>
+                <p>Your input is crucial to making <strong>DCO Garage</strong> even better. If you encounter any issues or have suggestions for improvements, please share your feedback via:</p>
+                <ul>
+                    <li>Google Form: <a href="#">Submit Feedback</a></li>
+                    <li>Slack Channel: <strong>...</strong></li>
+                    <li>Direct message to: <strong>@hpotlia</strong></li>
+                </ul>
+                <p><strong>Let’s make this a powerful tool together! 💪</strong></p>
+                <p><strong>Happy exploring!</strong></p>
+            </div>
+        </div>
+	</div>
+	
+	<!--Scripts below are for backend databsae-->
+    <script src="fetchBookmarks.js"></script> <!-- File for DCO (Tools) Commom Bookmarks -->
+	<script src="fetchDcoseonly.js"></script> <!-- New file for fetching DCOSE bookmarks only not for Admin -->
+    <script src="addBookmark.js"></script> <!-- File for Adding Bookmarks -->
+	<script src="fetchToolkit.js"></script> <!-- New file for DCO Toolkit -->
+	<script src="fetchUpdates.js"></script> <!-- New file for Updates -->
+	<script src="main.js"></script> <!-- Main file to handdle other feature and core features -->
+
+		<!-- Background Overlay -->
+		<div id="modalOverlay" class="overlay"></div>
+
+		<!-- Password Modal -->
+		<div id="passwordModal" class="modal">
+			<div class="modal-content">
+				<h2>Enter Password</h2>
+				<input type="password" id="passwordInput" placeholder="Enter password" onkeypress="handleEnter(event)" />
+				<div class="modal-buttons">
+					<button class="save-button" onclick="validatePassword()">Submit</button>
+					<button class="cancel-button" onclick="closePasswordModal()">Cancel</button>
+				</div>
+			</div>
+		</div>
+		
+	<button id="scrollTopButton" onclick="scrollToTop()">&#x2B06;</button>
+
+    <footer>
+        <b style="color: red;">made possible with the help of:</b> coffee, coffee & coffee  &#10084 <i class="fa fa-coffee" style="font-size:15px;color:red">
+    </footer>
+</body>
+</html>

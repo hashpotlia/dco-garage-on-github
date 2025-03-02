@@ -1,0 +1,843 @@
+ /* :D UI-inspired styles */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #ffffff;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            border-right: 1px solid #d2d2d7;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: #1d1d1f;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: 500;
+        }
+
+        .sidebar a:hover {
+            background-color: #e8e8ed;
+        }
+
+        .sidebar .active {
+            background-color: #ff9900;
+            color: #ffffff;
+            border-radius: 10px;
+            margin: 5px;
+        }
+
+        .content {
+            margin-left: 200px;
+            padding: 80px 40px 40px;
+            transition: margin-left 0.3s;
+        }
+
+        .content h1 {
+            color: #ff9900;
+            font-size: 28px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #d2d2d7;
+        }
+
+        table th {
+            background-color: #f5f5f7;
+            color: #ff9900;
+        }
+
+        table tr:hover {
+            background-color: #e8e8ed;
+        }
+
+        .top-menu {
+            display: flex;
+            justify-content: flex-start;
+            background-color: #ffffff;
+            padding: 12px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 200px;
+            right: 0;
+            z-index: 999;
+        }
+
+        .top-menu a {
+            margin-right: 20px;
+            color: #1d1d1f;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+
+        .top-menu a:hover {
+            background-color: #e8e8ed;
+        }
+
+        .top-menu .active {
+            background-color: #ff9900;
+            color: #ffffff;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            border: 1px solid #d2d2d7;
+        }
+
+        button {
+            background-color: #ff9900;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        button:hover {
+            background-color: #cc7700;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            font-size: 14px;
+            border-top: 1px solid #d2d2d7;
+        }
+		
+		/* Floating Dark Mode Toggle */
+		#darkModeToggle {
+			position: fixed;
+			top: 15px;
+			right: 15px;
+			width: 50px;
+			height: 50px;
+			font-size: 24px;
+			border: none;
+			background-color: #ff9900;
+			color: black;
+			border-radius: 50%;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+			cursor: pointer;
+			z-index: 9999;
+			transition: background-color 0.3s, transform 0.2s;
+		}
+
+		#darkModeToggle:hover {
+			background-color: #cc7700;
+			transform: scale(1.1);
+		}
+
+		/* Dark Mode Styles */
+		.dark-mode {
+			background-color: #1e1e1e;
+			color: white;
+		}
+
+		.dark-mode .sidebar {
+			background-color: #2a2a2a;
+			border-right: 1px solid #444;
+		}
+
+		.dark-mode .top-menu {
+			background-color: #2a2a2a;
+			box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+		}
+
+		.dark-mode table {
+			background-color: #2a2a2a;
+			color: white;
+		}
+
+		.dark-mode table th {
+			background-color: #444;
+			color: orange;
+		}
+
+		.dark-mode button {
+			background-color: orange;
+			color: black;
+			border: none;
+		}
+
+		.dark-mode a {
+			color: orange;
+		}
+
+		.dark-mode #darkModeToggle {
+			background-color: #444;
+			color: white;
+		}
+
+		.dark-mode #darkModeToggle:hover {
+			background-color: #666;
+		}
+		
+		/* New rule: Table row hover in dark mode */
+		.dark-mode table tr:hover {
+			background-color: #3F3F3F; /* A darker, cooler grey for a subtler hover effect */
+		}
+		
+		
+		/* Default Light Mode */
+		body {
+			background-color: #f5f5f7;
+			color: #1d1d1f;
+		}
+
+		/* Dark Mode */
+		.dark-mode {
+			background-color: #1e1e1e;
+			color: white;
+		}
+
+		/* Sidebar Dark Mode */
+		.dark-mode .sidebar {
+			background-color: #2a2a2a;
+			border-right: 1px solid #444;
+		}
+
+		.dark-mode .sidebar a {
+			color: #ddd;
+		}
+
+		.dark-mode .sidebar a:hover {
+			background-color: #444;
+		}
+
+		/* Top Menu Dark Mode */
+		.dark-mode .top-menu {
+			background-color: #2a2a2a;
+			box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+		}
+
+		.dark-mode .top-menu a {
+			color: white;
+		}
+
+		.dark-mode .top-menu a:hover {
+			background-color: #444;
+		}
+
+		/* Tables in Dark Mode */
+		.dark-mode table {
+			background-color: #2a2a2a;
+			color: white;
+		}
+
+		.dark-mode table th {
+			background-color: #444;
+			color: orange;
+		}
+
+		.dark-mode table td {
+			border-bottom: 1px solid #444;
+		}
+
+		/* Buttons in Dark Mode */
+		.dark-mode button {
+			background-color: orange;
+			color: black;
+			border: none;
+		}
+
+		.dark-mode button:hover {
+			background-color: #cc7700;
+		}
+
+		/* Links in Dark Mode */
+		.dark-mode a {
+			color: orange;
+		}
+
+		.dark-mode a:hover {
+			text-decoration: underline;
+		}
+		
+		
+		
+		
+		
+		/* Universal Search Bar */
+		#universalSearch {
+			position: absolute;
+			right: 80px;
+			top: 10px;
+			padding: 8px 15px;
+			border: 1px solid #ccc;
+			border-radius: 20px;
+			font-size: 14px;
+			width: 200px;
+			transition: all 0.3s;
+		}
+
+		#universalSearch:focus {
+			width: 250px;
+			outline: none;
+			border-color: #ff9900;
+		}
+		
+		
+		
+		/* Sidebar Logo Styling */
+		#sidebarLogo {
+			font-size: 22px;
+			font-weight: bold;
+			text-align: center;
+			padding: 20px 10px;
+			color: white;
+			background-color: orange; /* Background color for contrast */
+			letter-spacing: 2px;
+		}
+
+		/* Adjust Sidebar Spacing */
+		.sidebar {
+			padding-top: 5px; /* Ensures spacing below the logo */
+		}
+		
+		
+		
+		
+		
+		
+		
+			        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+        .add-button {
+            background-color: #f90;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .add-button:hover {
+            background-color: #FFB84D;
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 90%;
+            width: 300px;
+        }
+        .modal input {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .modal-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .modal button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .save-button {
+            background-color: #f90;
+            color: white;
+        }
+        .cancel-button {
+            background-color: #f90;
+            color: white;
+        }
+		
+		
+		
+		
+		
+		/* Modal Styling */
+		.modal {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: white;
+			padding: 20px;
+			border-radius: 12px;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+			text-align: center;
+			max-width: 90%;
+			width: 300px;
+			z-index: 1000;
+		}
+
+		.modal-content h2 {
+			margin-bottom: 10px;
+			color: #ff9900;
+		}
+
+		.modal input {
+			padding: 10px;
+			width: 80%;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			text-align: center;
+			font-size: 16px;
+		}
+
+		.modal-buttons {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 15px;
+		}
+
+		.modal button {
+			padding: 8px 12px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.save-button {
+			background-color: #f90;
+			color: white;
+		}
+
+		.cancel-button {
+			background-color: #ccc;
+			color: black;
+		}
+
+
+
+		/* Overlay to disable background interactions */
+		.overlay {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
+			z-index: 999; /* Keep above everything */
+		}
+
+		/* Ensure modal is on top */
+		.modal {
+			z-index: 1000; /* Higher than the overlay */
+		}
+		
+		
+	
+		/* Ensure modals are above overlay */
+		.modal {
+			display: none;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: white;
+			padding: 50px;
+			border-radius: 12px;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+			text-align: center;
+			max-width: 90%;
+			width: 300px;
+			z-index: 1000; /* Higher than the overlay */
+		}
+
+		.modal-content h2 {
+			margin-bottom: 10px;
+			color: #ff9900;
+		}
+
+		.modal input {
+			padding: 10px;
+			width: 100%;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			text-align: center;
+			font-size: 16px;
+		}
+
+		.modal-buttons {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 15px;
+		}
+
+		.modal button {
+			padding: 8px 12px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.save-button {
+			background-color: #f90;
+			color: white;
+		}
+
+		.cancel-button {
+			background-color: #ccc;
+			color: black;
+		}
+		
+		
+		
+		/*Floating "Scroll to Top" Button*/
+		#scrollTopButton {
+			display: none;
+			position: fixed;
+			bottom: 40px;
+			right: 20px;
+			background-color: orange;
+			color: white;
+			padding: 10px;
+			border-radius: 50%;
+			cursor: pointer;
+			border: none;
+			font-size: 18px;
+			box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.3);
+		}
+		
+		/*Glassmorphism - Glass like UI*/
+				.glass-panel {
+			background: rgba(255, 255, 255, 0.2);
+			backdrop-filter: blur(10px);
+			border-radius: 12px;
+			padding: 20px;
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+		}
+			
+		/* New styles for the toolkit entry layout */
+		/* Styles for filter and sort controls */
+		.toolkit-controls {
+			display: flex;
+			gap: 20px;
+			margin-bottom: 20px;
+		}
+
+		.filter-control, .sort-control {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		.filter-control label, .sort-control label {
+			color: #1d1d1f;
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		.dark-mode .filter-control label, .dark-mode .sort-control label {
+			color: #ffffff;
+		}
+
+		.filter-control select, .sort-control select {
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid #d2d2d7;
+			background-color: #e8e8ed;
+			color: #1d1d1f;
+			font-size: 14px;
+		}
+
+		.dark-mode .filter-control select, .dark-mode .sort-control select {
+			background-color: #444;
+			color: #ffffff;
+			border-color: #666;
+		}
+
+		/* Adjust Highlight.js default theme for light/dark mode */
+		.hljs {
+			background: #e8e8ed;
+			color: #1d1d1f;
+		}
+
+		.dark-mode .hljs {
+			background: #444;
+			color: #ffffff;
+		}
+
+		/* Styles for toolkit entries */
+		.toolkit-entry {
+			margin-bottom: 20px;
+		}
+
+		.label-bold {
+			font-weight: 700; /* Bold for labels */
+		}
+
+		.toolkit-details {
+			font-size: 16px;
+			font-weight: 500;
+			color: #1d1d1f; /* Dark color for light mode */
+			margin-bottom: 5px;
+		}
+
+		.dark-mode .toolkit-details {
+			color: #ffffff; /* White for dark mode */
+		}
+
+		.toolkit-category {
+			font-size: 14px;
+			font-weight: 500;
+			color: black; /* Orange to match toggle-btn */
+			background: #e8e8ed; /* Slight orange background for highlight */
+			padding: 2px 8px;
+			border-radius: 12px;
+			display: inline-block;
+			margin-bottom: 5px;
+		}
+
+		.dark-mode .toolkit-category {
+			background: #ff9900; /* Light gray for dark mode, slightly muted compared to details */
+		}
+
+		.toolkit-description {
+			font-size: 15px;
+			color: #1d1d1f; /* Dark color for light mode */
+			margin-bottom: 5px;
+		}
+
+		.dark-mode .toolkit-description {
+			color: #cccccc; /* Light gray for dark mode, slightly muted compared to details */
+		}
+
+		.toggle-btn {
+			background: #e8e8ed;
+			border: none;
+			color: #ff9900;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: 500;
+			text-align: left;
+			padding: 0;
+			display: block;
+		}
+
+		.commands-content {
+			margin-top: 10px;
+		}
+
+		.commands-content pre {
+			background-color: #e8e8ed; /* Dark color for light mode */
+			padding: 10px;
+			border-radius: 5px;
+			overflow-x: auto;
+			margin: 0;
+			white-space: pre-wrap;
+			max-height: 200px;
+		}
+
+		.dark-mode .commands-content pre {
+			background-color: #444;
+		}
+
+		.copy-btn {
+			background-color: #ff9900;
+			color: #ffffff;
+			border: none;
+			padding: 5px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-weight: 500;
+			margin-top: 5px;
+		}
+
+		.copy-btn:hover {
+			background-color: #cc7700;
+		}
+
+		.copy-status {
+			margin-left: 10px;
+			color: #ff9900;
+			font-size: 12px;
+		}
+		
+/*Bookmark Manager Info, DCO Update, DCO Toolkit*/
+    .bookmark-manager {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+    }
+	.dark-mode .bookmark-manager {
+        background: #333333;
+    }
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        color: orange;
+    }
+	.dark-mode .title {
+        color: orange;
+    }
+    .description {
+        font-size: 16px;
+        color: #555;
+    }
+	.dark-mode .description {
+        color: white;
+    }
+    .admin-access {
+        font-size: 14px;
+        color: #777;
+    }
+	.dark-mode .admin-access {
+        color: white;
+    }	
+		
+		
+/* Styles for Updates section */
+.update-entry {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d2d2d7;
+    padding-bottom: 10px;
+}
+
+.dark-mode .update-entry {
+    border-bottom: 1px solid #666;
+}
+
+.update-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.update-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #1d1d1f;
+}
+
+.dark-mode .update-header h2 {
+    color: #ffffff;
+}
+
+.update-version {
+    font-size: 14px;
+    color: #ff9900;
+}
+
+.update-date {
+    font-size: 14px;
+    color: #1d1d1f;
+}
+
+.dark-mode .update-date {
+    color: #cccccc;
+}
+
+.update-header .toggle-btn {
+    font-size: 14px;
+    background: #e8e8ed;
+    border: none;
+    color: #ff9900;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.dark-mode .update-header .toggle-btn {
+    background: #444;
+}
+
+.update-content {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.update-content p {
+    margin: 0;
+    font-size: 16px;
+    color: #1d1d1f;
+}
+
+.dark-mode .update-content p {
+    color: #cccccc;
+}
+
+.announcement {
+    margin-top: 20px;
+}
+
+.announcement h2 {
+    color: #1d1d1f;
+}
+
+.dark-mode .announcement h2 {
+    color: #ffffff;
+}
+
+.announcement p {
+    color: #1d1d1f;
+}
+
+.dark-mode .announcement p {
+    color: #cccccc;
+}
+
+.announcement ul {
+    padding-left: 20px;
+}
+
+.announcement li {
+    color: #1d1d1f;
+}
+
+.dark-mode .announcement li {
+    color: #cccccc;
+}
+
+
+
+
