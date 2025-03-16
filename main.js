@@ -7,8 +7,9 @@
 			const dcoHomeLink = document.querySelector(".sidebar a:nth-child(2)"); // DCO Home
 			const sevMonitorLink = document.querySelector(".sidebar a:nth-child(3)");
 			const dcoToolkitLink = document.querySelector(".sidebar a:nth-child(4)");
-			const bookmarkManagerLink = document.querySelector(".sidebar a:nth-child(5)");
-			const updatesLink = document.querySelector(".sidebar a:nth-child(6)"); // Updates
+			const dcoLabsLink = document.querySelector(".sidebar a:nth-child(5)"); // New DCO Labs link
+			const bookmarkManagerLink = document.querySelector(".sidebar a:nth-child(6)");
+			const updatesLink = document.querySelector(".sidebar a:nth-child(7)"); // Updates
 			const dashboardLink = document.querySelector(".top-menu a:nth-child(1)"); // Dashboard
 			const wikiResourcesLink = document.querySelector(".top-menu a:nth-child(2)"); // Wiki Resources
 			const dcoseResourceLink = document.querySelector(".top-menu a:nth-child(3)"); // DCOSE Resource
@@ -18,6 +19,7 @@
 			const dcoseResourceSection = document.getElementById("dcose-resource-section"); // New section
 			const sevMonitorSection = document.getElementById("sev-monitor-section");
 			const dcoToolkitSection = document.getElementById("dco-toolkit-section");
+			const dcoLabsSection = document.getElementById("dco-labs-section"); // New section
 			const bookmarkManagerSection = document.getElementById("bookmark-manager-section");
 			const updatesSection = document.getElementById("updates-section");
 
@@ -36,6 +38,7 @@
 				dcoseResourceSection.style.display = "none"; // Hide new section
 				sevMonitorSection.style.display = "none";
 				dcoToolkitSection.style.display = "none";
+				dcoLabsSection.style.display = "none"; // Hide by default
 				bookmarkManagerSection.style.display = "none";
 				updatesSection.style.display = "none";
 
@@ -80,6 +83,10 @@
 
 			dcoToolkitLink.addEventListener("click", function(event) {
 				showSection(event, dcoToolkitSection, [dcoToolkitLink]);
+			});
+			
+			dcoLabsLink.addEventListener("click", function(event) {
+				showSection(event, dcoLabsSection, [dcoLabsLink]);
 			});
 
 			bookmarkManagerLink.addEventListener("click", function(event) {
@@ -339,3 +346,103 @@ window.saveBookmark = async function() {
     }
 };
 
+//DCO Labs - Section
+//Tile 1
+window.checkHostConsoleIP = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Host Asset ID!");
+        return;
+    }
+    const url = `https://tavern.corp.amazon.com/iws/api/akl/consoles?asset_id=${encodeURIComponent(assetId)}`;
+    window.open(url, "_blank");
+};
+
+//Tile 2
+window.checkRackPSCHealth = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Rack Asset ID!");
+        return;
+    }
+    const url = `https://provisioning-web.amazon.com/rack_psc_health?rack_asset_id=${encodeURIComponent(assetId)}`;
+    window.open(url, "_blank");
+};
+
+//Tile 3
+window.checkHostBOMReport = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Host HWID!");
+        return;
+    }
+    const url = `https://hwmon-api-akl.aka.amazon.com/bom_report/${encodeURIComponent(assetId)}`;
+    window.open(url, "_blank");
+};
+
+//Tile 4
+window.checkHostBOMFailureReport = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Host HWIDD!");
+        return;
+    }
+    const url = `https://hwmon-api-akl.aka.amazon.com/bom_failures/${encodeURIComponent(assetId)}`;
+    window.open(url, "_blank");
+};
+
+//Tile 5
+window.checkHostHWMonRecord = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Host HWID!");
+        return;
+    }
+    const url = `https://hwmon-api-akl.aka.amazon.com/host_record/${encodeURIComponent(assetId)}`;
+    window.open(url, "_blank");
+};
+
+//Tile 6
+window.checkRackHandoff = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Rack Asset ID!");
+        return;
+    }
+    const url = `https://infrastructure.amazon.com/automation/rackHandoff.cgi?vetting_status=on&navigation=rack_asset_id&rack_asset_id=${encodeURIComponent(assetId)}`;
+	//`https://infrastructure.amazon.com/automation/rackHandoff.cgi?rack_asset_id=${encodeURIComponent(assetId)}`;
+    window.open(url, "_blank");
+};
+
+//Tile 7
+window.checkRackDeployed = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Rack Asset ID!");
+        return;
+    }
+    const url = `https://racks.aka.amazon.com/racks/${encodeURIComponent(assetId)}`;
+    window.open(url, "_blank");
+};
+
+//Tile 8
+window.checkNSMHostname = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Device Hostname!");
+        return;
+    }
+    const url = `https://nsm-akl.aka.corp.amazon.com/?query=${encodeURIComponent(assetId)}`;
+    window.open(url, "_blank");
+};
+
+//Tile 9
+window.checkHapposhuHostname = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Device Hostname!");
+        return;
+    }
+    const url = `https://tavern.corp.amazon.com/happoshu?all_sources=true&partial_match=true&all_devices_in_rack=false&show_deleted=false&device_names=${encodeURIComponent(assetId)}&region=AKL#search`;
+    window.open(url, "_blank");
+};

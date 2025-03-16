@@ -25,9 +25,12 @@
         <a href="#" class="active">DCO Home</a>
         <a href="#">Sev Monitor</a>
         <a href="#">DCO Toolkit</a>
+		<a href="#">DCO Labs</a> <!-- New tab added here -->
 		<a href="#">Bookmark Manager</a>
 		<a href="#" id="updatesLink">Updates</a>
+		<a href="https://w.amazon.com/bin/view/AKL_InfraOps/" target="_blank">AKL Wiki</a>
 		<a href="https://dcodb.integ.amazon.com/dashboards2/akl/" target="_blank">DCO Dashboard</a>
+		
 		<div id="quickActions">
 </div>
 
@@ -252,6 +255,98 @@
 				</div>
 			</div>
 			<div id="toolkit-list"></div> <!-- Entries will be dynamically populated -->
+		</div>
+		
+		<!-- DCO Labs Section (Initially Hidden) -->
+		<div id="dco-labs-section" style="display: none;" class="glass-panel">
+			<div class="bookmark-manager">
+			<h1 class="title" align="center">DCO Labs</h1>
+			<hr>
+			<p align="center">Experimental tools and utilities for DCO operations.</p>
+			</div>
+			<div class="tiles-container">
+				<!-- Tile 1 -->
+				<div class="tile">
+					<h2>Host Console IP</h2>
+					<p>Please enter the Host Asset ID to check the Host console IP and status.</p>
+					<div class="tile-input">
+						<input type="text" id="host-asset-id-1" placeholder="Enter Host Asset ID" onkeypress="if(event.key === 'Enter') checkHostConsoleIP('host-asset-id-1')">
+						<button onclick="checkHostConsoleIP('host-asset-id-1')">Check</button>
+					</div>
+				</div>
+				<!-- Tile 2 -->
+				<div class="tile">
+					<h2>Rack PSC Health</h2>
+					<p>Please enter the Rack Asset ID to check the Rack PSC Health Status.</p>
+					<div class="tile-input">
+						<input type="text" id="host-asset-id-2" placeholder="Enter Rack Asset ID" onkeypress="if(event.key === 'Enter') checkRackPSCHealth('host-asset-id-2')">
+						<button onclick="checkRackPSCHealth('host-asset-id-2')">Check</button>
+					</div>
+				</div>
+				<!-- Tile 3 -->
+				<div class="tile">
+					<h2>Host BOM Report</h2>
+					<p>Please enter the Host HWID to check the Host BOM report.</p>
+					<div class="tile-input">
+						<input type="text" id="host-asset-id-3" placeholder="Enter Host HWID" onkeypress="if(event.key === 'Enter') checkHostBOMReport('host-asset-id-3')">
+						<button onclick="checkHostBOMReport('host-asset-id-3')">Check</button>
+					</div>
+				</div>
+				<!-- Tile 4 -->
+				<div class="tile">
+					<h2>Host BOM Failures Report</h2>
+					<p>Please enter the Host HWID to check the Host BOM failures report.</p>
+					<div class="tile-input">
+						<input type="text" id="host-asset-id-4" placeholder="Enter Host HWID" onkeypress="if(event.key === 'Enter') checkHostBOMFailureReport('host-asset-id-4')">
+						<button onclick="checkHostBOMFailureReport('host-asset-id-4')">Check</button>
+					</div>
+				</div>
+				<!-- Tile 5 -->
+				<div class="tile">
+					<h2>Host HWMon Record</h2>
+					<p>Please enter the Host HWID to check the Host HWMon record (get more detailed information about hardware).</p>
+					<div class="tile-input">
+						<input type="text" id="host-asset-id-5" placeholder="Enter Host HWID" onkeypress="if(event.key === 'Enter') checkHostHWMonRecord('host-asset-id-5')">
+						<button onclick="checkHostHWMonRecord('host-asset-id-5')">Check</button>
+					</div>
+				</div>
+				<!-- Tile 6 -->
+				<div class="tile">
+					<h2>Rack Datatech Handoff (Host Ingestion)</h2>
+					<p>Please enter the Rack Asset ID to check the Hosts Ingestion and staus.</p>
+					<div class="tile-input">
+						<input type="text" id="host-asset-id-6" placeholder="Enter Rack Asset ID" onkeypress="if(event.key === 'Enter') checkRackHandoff('host-asset-id-6')">
+						<button onclick="checkRackHandoff('host-asset-id-6')">Check</button>
+					</div>
+				</div>
+				<!-- Tile 7 -->
+				<div class="tile">
+					<h2>Rack Handoff/Deployed (Strider)</h2>
+					<p>Please enter the Rack Asset ID to check the Rack Handedoff/Deployed and Hosts checked-in.</p>
+					<div class="tile-input">
+						<input type="text" id="host-asset-id-7" placeholder="Enter Rack Asset ID" onkeypress="if(event.key === 'Enter') checkRackDeployed('host-asset-id-7')">
+						<button onclick="checkRackDeployed('host-asset-id-7')">Check</button>
+					</div>
+				</div>
+				<!-- Tile 8 -->
+				<div class="tile">
+					<h2>AKL NSM (Hostname)</h2>
+					<p>Please enter the Device Hostname to find on NSM.</p>
+					<div class="tile-input">
+						<input type="text" id="host-asset-id-8" placeholder="Enter Rack Asset ID" onkeypress="if(event.key === 'Enter') checkNSMHostname('host-asset-id-8')">
+						<button onclick="checkNSMHostname('host-asset-id-8')">Check</button>
+					</div>
+				</div>
+				<!-- Tile 9 -->
+				<div class="tile">
+					<h2>Happoshu (Hostname) (AKL)</h2>
+					<p>Please enter the Device Hostname to find on Happoshu.</p>
+					<div class="tile-input">
+						<input type="text" id="host-asset-id-9" placeholder="Enter Rack Asset ID" onkeypress="if(event.key === 'Enter') checkHapposhuHostname('host-asset-id-9')">
+						<button onclick="checkHapposhuHostname('host-asset-id-9')">Check</button>
+					</div>
+				</div>
+			</div>
 		</div>
 		
 		<!-- Bookmark Manager Section (Initially Hidden) -->
