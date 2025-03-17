@@ -446,3 +446,14 @@ window.checkHapposhuHostname = function(inputId) {
     const url = `https://tavern.corp.amazon.com/happoshu?all_sources=true&partial_match=true&all_devices_in_rack=false&show_deleted=false&device_names=${encodeURIComponent(assetId)}&region=AKL#search`;
     window.open(url, "_blank");
 };
+
+//Tile 10
+window.checkEC2Admiral = function(inputId) {
+    const assetId = document.getElementById(inputId).value.trim();
+    if (!assetId) {
+        alert("Please enter a Rack Asset ID!");
+        return;
+    }
+    const url = `https://admiral.akl.aws-border.com/fleet?utf8=%E2%9C%93&q=rack%3A${encodeURIComponent(assetId)}`;
+    window.open(url, "_blank");
+};
