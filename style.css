@@ -1,0 +1,278 @@
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            color: #cbd5e1; /* slate-300 */
+        }
+
+        /* Custom scrollbar for a modern look */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; /* slate-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #4f46e5; /* indigo-600 */
+            border-radius: 20px;
+            border: 3px solid #1e293b; /* slate-800 */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #6366f1; /* indigo-500 */
+        }
+
+        /* Animation for modals */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .modal-fade-in {
+            animation: fadeIn 0.2s ease-out forwards;
+        }
+        
+        /* Animation for toast notifications */
+        @keyframes slideInFadeOut {
+            0% { transform: translateY(-100%); opacity: 0; }
+            10% { transform: translateY(0); opacity: 1; }
+            90% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100%); opacity: 0; }
+        }
+        .toast-animate {
+            animation: slideInFadeOut 3s ease-in-out forwards;
+        }
+
+        /* Blinking cursor for titles */
+        @keyframes blink {
+           50% { opacity: 0; }
+        }
+        .caret {
+            animation: blink 1s step-end infinite;
+        }
+
+        /* Active nav link style */
+        .nav-link.active {
+            color: #e0e7ff; /* indigo-200 */
+            background-color: #3730a3; /* indigo-800 */
+        }
+        
+        .admin-nav-link.active {
+            background-color: #4f46e5;
+            color: white;
+        }
+
+        /* OnCall badges styling */
+        .oncall-badge {
+            transition: all 0.2s ease;
+        }
+        .oncall-badge:hover {
+            transform: translateX(4px);
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Runbook search animations */
+        @keyframes pulse-runbook {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        .pulse-dot {
+            animation: pulse-runbook 1.5s infinite;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .slide-in-up {
+            animation: slideInUp 0.4s ease-out;
+        }
+
+        /* Suggestion cards styling */
+        .suggestion-card {
+            transition: all 0.3s ease;
+            animation: slideInUp 0.3s ease-out forwards;
+            opacity: 0;
+        }
+        .suggestion-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .suggestion-card.high-confidence {
+            border-left: 4px solid #10b981;
+        }
+        .suggestion-card.medium-confidence {
+            border-left: 4px solid #f59e0b;
+        }
+        .suggestion-card.low-confidence {
+            border-left: 4px solid #6b7280;
+        }
+
+        /* Beta modal styling */
+        .beta-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .beta-modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+        }
+        .beta-modal-content {
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow: hidden;
+            animation: slideUp 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+		
+		/* Add this to your existing styles */
+.search-result-card[style*="cursor:pointer"]:hover {
+    background: #34345e;
+    border-color: #6366f1;
+    transform: translateY(-2px);
+}
+
+.search-result-card[style*="cursor:default"] {
+    background: #232341;
+}
+
+.search-result-card[style*="cursor:default"]:hover {
+    background: #2a2a4a;
+    border-color: #4f46e5;
+}
+
+.search-result-card .btn {
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-result-card .btn:hover {
+    background: #4f46e5;
+}
+
+.search-result-card .copy-btn {
+    background: #10b981;
+}
+
+.search-result-card .copy-btn:hover {
+    background: #059669;
+}
+
+/* Search Results Modal Improvements */
+#search-results-modal {
+    z-index: 30; /* Lower than navbar which should be z-40 */
+}
+
+/* Ensure navbar stays on top */
+header {
+    z-index: 40 !important;
+}
+
+/* Keyboard shortcut styling */
+kbd {
+    background-color: #374151;
+    border: 1px solid #4b5563;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: #d1d5db;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 2px 4px;
+    white-space: nowrap;
+}
+
+/* AWS Orange shimmer effect */
+.version-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ff9900 0%,
+    #ffb84d 25%,
+    #ffffff 50%,
+    #ffb84d 75%,
+    #ff9900 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2.5s ease-in-out infinite;
+  position: relative;
+  font-weight: 700;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Add that AWS orange glow */
+.version-shimmer::after {
+  content: 'v3.0';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 153, 0, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2.5s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(0.5px);
+}
+
+/* Optional: Add a subtle AWS orange shadow */
+.version-shimmer {
+  text-shadow: 0 0 8px rgba(255, 153, 0, 0.3);
+}
+
+
+
