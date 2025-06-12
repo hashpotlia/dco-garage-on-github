@@ -49,18 +49,19 @@
                             <svg class="w-5 h-5 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                             </svg>
-                            <button id="globalSearchClear" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 hidden" title="Clear">&times;</button>
+                            <button id="globalSearchClear" class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300 hidden" aria-label="Clear search" title="Clear">&times;</button>
                         </div>
-                        <button id="admin-button" title="Admin Panel" class="p-2 rounded-md hover:bg-slate-800 transition-colors">
+                        <button id="admin-button" aria-label="Admin panel" title="Admin Panel" class="p-2 rounded-md hover:bg-slate-800 transition-colors">
                             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
                             </svg>
                         </button>
+                        <span id="lastRefreshed" class="text-xs text-slate-400 ml-2"></span>
                     </div>
 
                      <!-- Mobile Menu Button -->
                     <div class="md:hidden">
-                        <button id="mobile-menu-button" class="p-2 rounded-md hover:bg-slate-800">
+                        <button aria-label="Toggle mobile menu" id="mobile-menu-button" class="p-2 rounded-md hover:bg-slate-800">
                              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                              </svg>
@@ -162,6 +163,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
